@@ -1,0 +1,21 @@
+.iconUI
+  display: block
+  width: 20px
+  height: 20px
+
+.button
+  background-color: #fff
+  border: 1px solid #505050
+  outline: none
+  padding: 5px
+  cursor: pointer
+  transition: border-radius 0.25s
+  .iconUI
+    transition: transform 0.15s, fill 0.25s
+
+  &:active
+    .iconUI
+      transform: scale(120%)
+
+  &:hover
+    border-radius: 10px
