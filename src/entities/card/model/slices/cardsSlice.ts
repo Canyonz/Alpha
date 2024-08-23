@@ -5,6 +5,8 @@ import { CardsSchema } from "../types/cardsType";
 const initialState: CardsSchema = {
 	data: [],
 	isLike: false,
+	isLoading: false,
+	isError: false,
 };
 
 const cardsSlice = createSlice({
@@ -14,10 +16,16 @@ const cardsSlice = createSlice({
 		setCards: (state, action: PayloadAction<Card[]>) => {
 			state.data = action.payload.map((card) => ({ ...card, isLike: false }));
 		},
-		toggleLike: (state, action: PayloadAction<number>) => {
+		setIsLoading: (state, action: PayloadAction<boolean>) => {
+			state.isLoading = action.payload;
+		},
+		setIsError: (state, action: PayloadAction<boolean>) => {
+			state.isError = action.payload;
+		},
+		toggleLike: (state, action: PayloadAction<string>) => {
 			state.data = state.data.map((card) => (card.id === action.payload ? { ...card, isLike: !card.isLike } : card));
 		},
-		deleteCard: (state, action: PayloadAction<number>) => {
+		deleteCard: (state, action: PayloadAction<string>) => {
 			state.data = state.data.filter((card) => card.id !== action.payload);
 		},
 		toggleIsLikeFilter: (state) => {

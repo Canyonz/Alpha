@@ -9,7 +9,7 @@ import cls from "classnames";
 import styles from "./CardDelete.module.sass";
 
 interface CardDeleteProps {
-	id: number;
+	id: string;
 	className?: string;
 }
 

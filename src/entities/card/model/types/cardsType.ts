@@ -8,4 +8,6 @@ export interface Card {
 export interface CardsSchema {
 	data: Card[];
 	isLike: boolean;
+	isLoading: boolean;
+	isError: boolean;
 }

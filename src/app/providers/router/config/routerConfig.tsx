@@ -1,9 +1,9 @@
 import { CardDetailsPage } from "@/pages/cardDetailsPage";
 import { CardsPage } from "@/pages/cardsPage";
 import { getRouteCard, getRouteCards } from "@/shared/consts/routes";
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 
-export const routesConfig = createBrowserRouter([
+export const routesConfig = createHashRouter([
 	{
 		path: getRouteCards(),
 		element: <CardsPage />,

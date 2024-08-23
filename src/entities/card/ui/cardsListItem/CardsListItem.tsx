@@ -16,9 +16,11 @@ interface CardsListItemProps {
 }
 
 export const CardsListItem = ({ card, btns, className }: CardsListItemProps) => {
+	const imageSkeleton = <div className={styles.imgSkeleton}></div>;
+
 	return (
 		<Link to={getRouteCard(card.id)} className={cls(styles.cardListItem, className)}>
-			<ImageUI src={card.url} className={styles.img} />
+			<ImageUI src={card.url} className={styles.img} fallback={imageSkeleton} />
 			<div className={styles.content}>
 				<TextUI text={card.title} className={styles.title} />
 				<div className={styles.btns}>{btns}</div>

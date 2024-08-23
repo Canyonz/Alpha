@@ -8,6 +8,15 @@
   cursor: pointer
   transition: box-shadow 0.35s
 
+  .imgSkeleton
+    width: 260px
+    height: 260px
+    margin: 20px
+    border-radius: 50%
+    background: linear-gradient(90deg, #ebebeb 25%, #bebebe 50%, #ebebeb 75%)
+    background-size: 200% 100%
+    animation: skeletonAnim 2s linear infinite
+
   .img
     border-radius: 50%
     padding: 20px
@@ -33,3 +42,16 @@
 
   &:hover
     box-shadow: 0 2px 10px 0 #00000080
+
+@keyframes skeletonAnim
+  0%
+    background-position: 150% 0
+
+  33%
+    background-position: 150% 0
+
+  66%
+    background-position: -50% 0
+
+  100%
+    background-position: -50% 0

@@ -7,7 +7,7 @@ import { MouseEvent } from "react";
 import styles from "./CardToggleLike.module.sass";
 
 interface CardToggleLikeProps {
-	id: number;
+	id: string;
 	isLike: boolean;
 	className?: string;
 }
